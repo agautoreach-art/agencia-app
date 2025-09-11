@@ -1,5 +1,5 @@
 // src/app/_document.tsx
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   render() {
@@ -8,14 +8,29 @@ class MyDocument extends Document {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>AUTO REACH</title>  {/* Título padrão */}
+          
+          {/* Google Tag Manager */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=AW-17549190858`} // Substitua pelo seu ID GTM
+          />
+          <script>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17549190858');
+            `}
+          </script>
+          {/* Fim do código de Google Ads */}
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;
