@@ -65,7 +65,7 @@ export function Hero() {
       </div>
 
       {/* Badge redonda abaixo da faixa */}
-      <div className="absolute top-[calc(12rem+3rem)] left-1/2 -mt-27 sm:-mt-23 transform -translate-x-1/2 bg-[#cdfab9] text-[#002f6b] font-semibold rounded-full px-6 py-1 z-30 text-center">
+      <div className="absolute top-[calc(12rem+3rem)] left-1/2 -mt-27 sm:-mt-23 transform -translate-x-1/2 bg-[#cdfab9] text-[#002f6b] font-semibold rounded-full px-6 py-1 z-30 text-center badge-transformacao">
         Junte-se à transformação
       </div>
     </section>
