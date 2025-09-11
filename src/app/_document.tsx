@@ -8,12 +8,9 @@ class MyDocument extends Document {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>AUTO REACH</title>  {/* Título padrão */}
-          
+
           {/* Google Tag Manager */}
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=AW-17549190858`} // Substitua pelo seu ID GTM
-          />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17549190858"></script>
           <script>
             {`
               window.dataLayer = window.dataLayer || [];
@@ -22,7 +19,7 @@ class MyDocument extends Document {
               gtag('config', 'AW-17549190858');
             `}
           </script>
-          {/* Fim do código de Google Ads */}
+          {/* Fim Google Tag Manager */}
         </Head>
         <body>
           <Main />
