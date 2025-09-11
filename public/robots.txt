@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: agenciareach.com.br
+Host: https://agenciareach.com.br
 
 # Sitemaps
-Sitemap: agenciareach.com.br/sitemap.xml
+Sitemap: https://agenciareach.com.br/sitemap.xml
