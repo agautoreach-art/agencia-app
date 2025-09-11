@@ -34,7 +34,6 @@ export function Footer() {
                                     alt={item.name}
                                     width={100}
                                     height={50}
-                                    quality={100}
                                     style={{
                                         width: "auto",
                                         height: "auto",

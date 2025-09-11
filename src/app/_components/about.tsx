@@ -22,7 +22,7 @@ export function About() {
                     src={notebook}
                     alt="ntebook"
                     fill
-                    quality={100}
+                    
                     className="object-cover hover:scale-110 duration-300"
                     priority
                   />
@@ -33,7 +33,7 @@ export function About() {
                     src={cliente}
                     alt="ciente"
                     fill
-                    quality={100}
+                    
                     priority
                   />
                 </div>
