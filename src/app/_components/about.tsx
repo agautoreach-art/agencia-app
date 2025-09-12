@@ -11,7 +11,7 @@ import { WhatsappLogoIcon } from "@phosphor-icons/react/dist/ssr";
 
 export function About() {
     return (
-        <section className="bg-white py-0 md:py-20 text-[#002f6b]">
+        <section className="bg-white py-0 md:py-20 text-[#002f6b] mb-15">
           <div className="container px-4 mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -66,7 +66,7 @@ export function About() {
                   <a 
                     target='_blank'
                     href={`https://wa.me/5541996855407?text=Olá, vim atráves do site e tenho interesse nos serviços da Auto Reach.`} 
-                    className="bg-[#002f6b] text-white flex items-center justify-center w-fit gap-2 px-4 py-2 rounded-md"
+                    className="bg-gradient-to-r from-[#1e293b] to-[#003366] text-white flex items-center justify-center w-fit gap-2 px-4 py-2 rounded-md"
                   >
                     <WhatsappLogoIcon className="w-5 h-5 text-white" />
                     Contato via Whatsapp

@@ -56,7 +56,7 @@ function scrollNext(){
 
 
     return (
-        <section className="bg-[#1e293b] py-16">
+        <section className="bg-gradient-to-r from-[#1e293b] to-[#003366] py-16">
             <div className="container mx-auto px-4">
 
             <h2 className="text-4xl text-white text-center font-bold mb-5">Mais de 200 cases de sucesso registrados</h2>

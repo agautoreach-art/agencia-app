@@ -1,19 +1,20 @@
-
 import { WhatsappLogoIcon } from '@phosphor-icons/react/dist/ssr'
-import LogoAzul from '../../../public/Logoazulsemfundo.png' // nova logo azul
+import LogoAzul from '../../../public/Logoazulsemfundo.png' 
+import rota21 from '../../../public/ViaSul.png' 
+import autovila from '../../../public/PrimeAuto.png' 
+import topcar from '../../../public/TopCar.png' 
 import Image from 'next/image'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden  bg-white text-[#002f6b]">
+    <section className="relative overflow-hidden bg-white text-[#002f6b]">
       
       {/* Conteúdo */}
       <div className="container -mt-12 lg:-mt-30 relative mx-auto px-4 pb-16 md:pb-0">
         <article className="grid grid-cols-1 gap-8 lg:grid-cols-1">
-          {/* Coluna de conteúdo */}
-          <div className="space-y-6 pt-10 md:pt-0 relative z-30 flex flex-col items-center lg:items-center lg:max-w-[700px] lg:mx-auto">
+          <div className="space-y-6 pt-10 md:pt-0 relative z-30 flex flex-col items-center lg:items-center lg:max-w-[800px] lg:mx-auto">
             
-            {/* Logo - alinhada à esquerda no desktop */}
+            {/* Logo */}
             <div className="flex justify-center lg:self-start lg:-ml-24 -mt-7 md:-mb-25 md:-mt-17">
               <Image
                 src={LogoAzul}
@@ -36,7 +37,7 @@ export function Hero() {
 
             {/* Subtítulo */}
             <p
-              className=" text-gray-400 lg:text-lg text-center leading-relaxed md:leading-[1.6]"
+              className="text-gray-500 lg:text-lg text-center leading-relaxed md:leading-[1.6]"
               data-aos="fade-right"
             >
               Dependa menos dos classificados, fortaleça sua loja e venda mais.
@@ -45,30 +46,51 @@ export function Hero() {
             {/* Botão */}
             <div className="flex justify-center">
               <a
-                data-aos="fade-up"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://wa.me/5541996855407?text=Olá, vim atráves do site e tenho interesse nos serviços da Auto Reach."
-                className="flex w-fit items-center justify-center gap-2 rounded-md bg-[#002f6b] px-5 py-2 text-white transition hover:bg-[#001f4c]"
-              >
-                <WhatsappLogoIcon className="h-5 w-5 text-white" />
-                Fale com um especialista
-              </a>
+                        data-aos="fade-up"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://wa.me/5541996855407?text=Olá, vim atráves do site e tenho interesse nos serviços da Auto Reach."
+                        className="flex w-fit items-center justify-center gap-2 rounded-md bg-gradient-to-r from-[#1e293b] to-[#003366] px-5 py-2 text-white transition hover:bg-[#001f4c]"
+                    >
+                        <WhatsappLogoIcon className="h-5 w-5 text-white" />
+                        Fale com um especialista
+                    </a>
             </div>
           </div>
         </article>
       </div>
 
-      {/* Faixa azul full width, fora do container */}
+      {/* Faixa azul */}
       <div className="absolute top-[calc(12rem)] -mt-30 sm:-mt-30 left-0 w-screen bg-[#002f6b] text-white text-center font-semibold py-2 z-0">
         Exclusivo para lojas de carro
       </div>
        
-      {/* Badge redonda abaixo da faixa */}
+      {/* Badge redonda */}
       <div className="absolute top-[calc(12rem+3rem)] left-1/2 -mt-27 sm:-mt-23 transform -translate-x-1/2 bg-[#cdfab9] text-[#002f6b] font-semibold rounded-full px-6 py-1 z-30 text-center whitespace-nowrap">
         Junte-se à transformação
       </div>
-      
+
+      {/* Empresas que confiam - NO FINAL DO HERO */}
+<div className="relative mt-0 flex flex-col items-center gap-4 px-6 pb-0">
+  
+  {/* Logos sobrepostas */}
+  <div className="flex -space-x-6">
+    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
+      <Image src={topcar} alt="Empresa 1" width={50} height={50} />
+    </div>
+    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
+      <Image src={rota21} alt="Empresa 2" width={50} height={50} />
+    </div>
+    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
+      <Image src={autovila} alt="Empresa 3" width={50} height={50} />
+    </div>
+  </div>
+
+  {/* Texto */}
+  <p className="text-gray-500 text-center text-base max-w-md">
+    Várias lojas confiam no nosso serviço, faça parte você também.
+  </p>
+</div>
     </section>
   )
 }
