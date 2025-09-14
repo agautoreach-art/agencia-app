@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import dynamic from "next/dynamic";
+const FacebookPixel = dynamic(import('../app/components/FacebookPixel'));
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +29,12 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>Auto Reach</title> {/* Título padrão */}
+
+
+ 
+
+
+
        <script
         dangerouslySetInnerHTML={{__html:`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -47,7 +55,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         width="0" 
         
         ></iframe>
-        
+        <FacebookPixel />
         {children}
       </body>
     </html>
