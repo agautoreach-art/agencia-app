@@ -59,7 +59,7 @@ function scrollNext(){
         <section className="bg-gradient-to-r from-[#1e293b] to-[#003366] py-16">
             <div className="container mx-auto px-4">
 
-            <h2 className="text-4xl text-white text-center font-bold mb-5">Mais de 200 cases de sucesso registrados</h2>
+            <h2 className="text-4xl text-white text-center font-bold mb-5">Mais de 100 cases de sucesso registrados</h2>
           <p className="text-1xl text-gray-300 text-center mb-12">Projetos com resultados acima da média são transformados <br /> em cases de sucesso. Conheça alguns deles abaixo.
           </p>
  

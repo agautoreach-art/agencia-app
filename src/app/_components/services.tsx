@@ -6,28 +6,28 @@ const services = [
     {  
         title: "Gestão de Tráfego Pago",
         description: "Impulsionamos seus resultados com campanhas de anúncios estratégicas e eficientes. Gerenciamos seus anúncios em plataformas como Facebook Ads, Instagram Ads, Google Ads e outras, com foco em gerar leads qualificados, aumentar vendas e fortalecer sua presença digital.",
-        icon: <LucideCircleDollarSign />,
+        icon: <LucideCircleDollarSign className="h-8 w-8 text-white" />,
     },
     {  
-        title: "Social Media",
+        title: "Gestão de Mídias",
         description: "Fortaleça sua presença online com estratégias completas de gestão de redes sociais. Criamos, planejamos e publicamos conteúdos que engajam seu público, aumentam seguidores qualificados e posicionam sua marca de forma consistente.",
-        icon: <Smartphone />,
+        icon: <Smartphone className="h-8 w-8 text-white" />,
     },
     {  
         title: "Vídeo Maker",
         description: "Dê vida à sua marca com vídeos profissionais que encantam e engajam seu público. Produzimos conteúdos audiovisuais, anúncios e apresentações, desde a criação do roteiro até a edição final. Autoridade e resultados reais para a sua loja.",
-        icon: <Clapperboard />,
+        icon: <Clapperboard className="h-8 w-8 text-white" />,
     },
     {  
         title: "Relatórios e Estratégias",
         description: "Acompanhamos o desempenho das suas campanhas com relatórios diários e semanais, garantindo total transparência sobre os resultados. Além disso, realizamos reuniões mensais para analisar métricas, revisar estratégias e planejar ações futuras, otimizando continuamente seus investimentos e maximizando o retorno.",
-        icon: <ClipboardList />,
+        icon: <ClipboardList className="h-8 w-8 text-white" />,
     },
 ]
 
 export function Services() {
     return (
-        <section className="bg-white py-16">
+        <section className="bg-gray-50 py-16">
             <div className="container mx-auto px-4">
 
                 {/* TOPO DA SEÇÃO */}
@@ -37,22 +37,22 @@ export function Services() {
                     </span>
                     <h2 className="text-3xl md:text-4xl font-bold text-[#1d396f] leading-snug">
                         Criamos a estrutura completa <br />
-                        para seu <span className="text-blue-600">negócio vender mais!</span>
+                        para sua loja <span className="text-green-500"> vender mais!</span>
                     </h2>
                 </div>
                 {/* FIM DO TOPO */}
 
-                {/* Lista de serviços vertical */}
-                <div className="flex flex-col gap-3">
+                {/* Lista de serviços com grid responsivo */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                     {services.map((item, index) => (
-                        <article key={index} className="bg-gradient-to-r from-[#1e293b] to-[#003366] text-white rounded-2xl p-6 space-y-4 flex">
+                        <article key={index} className="bg-white text-[#1d396f] rounded-2xl p-6 space-y-4 shadow-md hover:shadow-lg transition duration-300 ease-in-out">
                             <div className="flex gap-3 items-start">
-                                <span className="text-3xl">{item.icon}</span>
+                                <div className="p-4 bg-[#002f6b] rounded-full">
+                                    {item.icon}
+                                </div>
                                 <div>
-                                    <h3 className="font-bold text-xl my-1">{item.title}</h3>
-                                    <p className="text-gray-400 text-sm select-none">
-                                        {item.description}
-                                    </p>
+                                    <h3 className="font-semibold text-2xl mb-2">{item.title}</h3>
+                                    <p className="text-gray-700 text-sm">{item.description}</p>
                                 </div>
                             </div>
                         </article>
@@ -61,16 +61,7 @@ export function Services() {
 
                 {/* Botão WhatsApp */}
                 <div className="flex justify-center mt-8">
-                    <a
-                        data-aos="fade-up"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://wa.me/5541996855407?text=Olá, vim atráves do site e tenho interesse nos serviços da Auto Reach."
-                        className="flex w-fit items-center justify-center gap-2 rounded-md bg-gradient-to-r from-[#1e293b] to-[#003366] px-5 py-2 text-white transition hover:bg-[#001f4c]"
-                    >
-                        <WhatsappLogoIcon className="h-5 w-5 text-white" />
-                        Fale com um especialista
-                    </a>
+                    
                 </div>
             </div>
         </section>

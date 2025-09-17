@@ -32,7 +32,8 @@ export function Hero() {
               className="text-3xl font-bold leading-relaxed md:text-4xl lg:text-5xl lg:leading-[1.6] mt-10 text-center"
               data-aos="fade-down"
             >
-              Tráfego pago com resultado previsível para loja de carros
+              Tráfego Pago Especializado <p></p> para Lojas de Carro
+              
             </h1>
 
             {/* Subtítulo */}
@@ -40,7 +41,7 @@ export function Hero() {
               className="text-gray-500 lg:text-lg text-center leading-relaxed md:leading-[1.6]"
               data-aos="fade-right"
             >
-              Dependa menos dos classificados, fortaleça sua loja e venda mais.
+              Quer resultados reais? Agende uma avaliação gratuita.
             </p>
 
             {/* Botão */}

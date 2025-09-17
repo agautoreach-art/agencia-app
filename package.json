@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.1",
     "@phosphor-icons/react": "^2.1.10",
     "@radix-ui/react-slot": "^1.2.3",
     "class-variance-authority": "^0.7.1",
