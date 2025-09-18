@@ -1,97 +1,57 @@
-import { WhatsappLogoIcon } from '@phosphor-icons/react/dist/ssr'
-import LogoAzul from '../../../public/Logoazulsemfundo.png' 
-import rota21 from '../../../public/ViaSul.png' 
-import autovila from '../../../public/PrimeAuto.png' 
-import topcar from '../../../public/TopCar.png' 
-import Image from 'next/image'
+// src/app/_components/hero.tsx
+"use client"; // Diretiva para tornar o componente um Client Component
+
+import { WhatsappLogoIcon } from '@phosphor-icons/react/dist/ssr';
+import Image from 'next/image';
+
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white text-[#002f6b]">
-      
+    <section className="relative overflow-hidden bg-[#001f3d] text-white py-20 px-4">
+
+      {/* Estrelas flutuando */}
+      <div className="absolute top-0 left-0 w-full h-full z-10">
+        <div className="animate-pulse absolute top-2 left-10 text-yellow-500">★</div>
+        <div className="animate-pulse absolute top-20 right-10 text-blue-400">★</div>
+        <div className="animate-bounce absolute top-48 left-32 text-pink-400">★</div>
+        <div className="animate-bounce absolute bottom-10 right-20 text-green-500">★</div>
+        <div className="animate-pulse absolute top-60 left-48 text-white">★</div>
+      </div>
+
       {/* Conteúdo */}
-      <div className="container -mt-12 lg:-mt-30 relative mx-auto px-4 pb-16 md:pb-0">
-        <article className="grid grid-cols-1 gap-8 lg:grid-cols-1">
-          <div className="space-y-6 pt-10 md:pt-0 relative z-30 flex flex-col items-center lg:items-center lg:max-w-[800px] lg:mx-auto">
-            
-            {/* Logo */}
-            <div className="flex justify-center lg:self-start lg:-ml-24 -mt-7 md:-mb-25 md:-mt-17">
-              <Image
-                src={LogoAzul}
-                alt="Logo Auto Reach Azul"
-                width={260}
-                height={260}
-                priority
-                quality={100}
-                className="object-contain md:w-[400px] md:h-[400px] lg:w-[230px] lg:h-[450px]"
-              />
-            </div>
+      <div className="container mx-auto text-center relative z-20">
 
-            {/* Título */}
-            <h1
-              className="text-3xl font-bold leading-relaxed md:text-4xl lg:text-5xl lg:leading-[1.6] mt-10 text-center"
-              data-aos="fade-down"
-            >
-              Tráfego Pago Especializado <p></p> para Lojas de Carro
-              
-            </h1>
+        {/* Título */}
+        <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl text-white mb-6">
+          Aumente as vendas da sua <br /> loja de carros sem perder tempo com <br /> leads desqualificados e curiosos.
+        </h1>
 
-            {/* Subtítulo */}
-            <p
-              className="text-gray-500 lg:text-lg text-center leading-relaxed md:leading-[1.6]"
-              data-aos="fade-right"
-            >
-              Quer resultados reais? Agende uma avaliação gratuita.
-            </p>
+        {/* Subtítulo */}
+        <p className="text-lg md:text-xl text-gray-300 mb-8">
+         Alcance clientes qualificados com estratégias de <span className="font-extra-bold"> tráfego pago </span> <br /> e aumente suas vendas sem perder tempo.
+        </p>
 
-            {/* Botão */}
-            <div className="flex justify-center">
-              <a
-                        data-aos="fade-up"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://wa.me/5541996855407?text=Olá, vim atráves do site e tenho interesse nos serviços da Auto Reach."
-                        className="flex w-fit items-center justify-center gap-2 rounded-md bg-gradient-to-r from-[#1e293b] to-[#003366] px-5 py-2 text-white transition hover:bg-[#001f4c]"
-                    >
-                        <WhatsappLogoIcon className="h-5 w-5 text-white" />
-                        Fale com um especialista
-                    </a>
-            </div>
-          </div>
-        </article>
+        {/* Botão de CTA */}
+        <div className="flex justify-center py-10 mb-10">
+          <a
+            href='#formulario'
+            className="flex items-center gap-2 px-6 py-3 bg-green-500 text-white rounded-sm text-lg hover:bg-green-600 transition duration-300"
+          >
+            QUERO SABER MAIS
+          </a>
+        </div>
+
       </div>
 
-      {/* Faixa azul */}
-      <div className="absolute top-[calc(12rem)] -mt-30 sm:-mt-30 left-0 w-screen bg-[#002f6b] text-white text-center font-semibold py-2 z-0">
-        Exclusivo para lojas de carro
-      </div>
-       
-      {/* Badge redonda */}
-      <div className="absolute top-[calc(12rem+3rem)] left-1/2 -mt-27 sm:-mt-23 transform -translate-x-1/2 bg-[#cdfab9] text-[#002f6b] font-semibold rounded-full px-6 py-1 z-30 text-center whitespace-nowrap">
-        Junte-se à transformação
+      {/* Flecha pontilhada animada */}
+      <div className="absolute bottom-20 left-1/2 transform py-38 -translate-x-1/2 animate-pulse z-20">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" className="text-white">
+          <path d="M12 2L12 22M12 22L6 16M12 22L18 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </div>
 
-      {/* Empresas que confiam - NO FINAL DO HERO */}
-<div className="relative mt-0 flex flex-col items-center gap-4 px-6 pb-0">
-  
-  {/* Logos sobrepostas */}
-  <div className="flex -space-x-6">
-    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
-      <Image src={topcar} alt="Empresa 1" width={50} height={50} />
-    </div>
-    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
-      <Image src={rota21} alt="Empresa 2" width={50} height={50} />
-    </div>
-    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md">
-      <Image src={autovila} alt="Empresa 3" width={50} height={50} />
-    </div>
-  </div>
-
-  {/* Texto */}
-  <p className="text-gray-500 text-center text-base max-w-md">
-    Várias lojas confiam no nosso serviço, faça parte você também.
-  </p>
-</div>
+      {/* Sombra nos cantos */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-20 rounded-lg z-0"></div>
     </section>
-  )
+  );
 }
