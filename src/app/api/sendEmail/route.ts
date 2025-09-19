@@ -1,46 +1,68 @@
-import nodemailer from "nodemailer";
-import { NextResponse } from "next/server";
+"use client";
 
-export async function POST(request: Request) {
-  try {
-    const data = await request.json();
+import { useState } from "react";
+import { useRouter } from "next/navigation"; // 👈 Importa para redirecionamento
+import { CheckCircle2 } from "lucide-react";
 
-    const { nome, email, empresa, telefone, vendas, cargo } = data;
+export function ContactForm() {
+  const router = useRouter(); // 👈 Hook para redirecionar
 
-    if (!nome || !email || !empresa || !telefone || !vendas || !cargo) {
-      return NextResponse.json({ message: "Preencha todos os campos." }, { status: 400 });
+  const [formData, setFormData] = useState({
+    nome: "",
+    email: "",
+    empresa: "",
+    telefone: "",
+    vendas: "",
+    cargo: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage("Formulário enviado com sucesso!");
+        setFormData({
+          nome: "",
+          email: "",
+          empresa: "",
+          telefone: "",
+          vendas: "",
+          cargo: "",
+        });
+
+        // Redireciona após 1.5 segundos
+        setTimeout(() => {
+          router.push("/obrigado");
+        }, 1500);
+      } else {
+        setMessage(data.message || "Erro ao enviar formulário");
+      }
+    } catch (error) {
+      setMessage("Erro na conexão. Tente novamente.");
     }
 
-    // Configurar o transporte SMTP do Nodemailer usando Gmail
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    // Montar o conteúdo do email
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
-      subject: `Novo lead - ${nome}`,
-      text: `
-        Nome: ${nome}
-        Email: ${email}
-        Empresa: ${empresa}
-        Telefone: ${telefone}
-        Vendas: ${vendas}
-        Cargo: ${cargo}
-      `,
-    };
-
-    // Enviar email
-    await transporter.sendMail(mailOptions);
-
-    return NextResponse.json({ message: "Email enviado com sucesso!" });
-  } catch (error) {
-    console.error("Erro ao enviar email:", error);
-    return NextResponse.json({ message: "Erro ao enviar email." }, { status: 500 });
+    setLoading(false);
   }
+
+  // ... Resto do JSX do formulário
 }
