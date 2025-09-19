@@ -25,8 +25,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PVNF17B9L6"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PVNF17B9L6');
+          `}
+        </Script>
+      </head>
+
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        
         {/* Facebook Pixel */}
         <Script
           id="facebook-pixel"
