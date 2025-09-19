@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // 👈 IMPORTANTE
 import { CheckCircle2 } from "lucide-react";
 
 export function ContactForm() {
@@ -15,6 +16,7 @@ export function ContactForm() {
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const router = useRouter(); // 👈 INICIALIZE
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,15 +39,8 @@ export function ContactForm() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage("Formulário enviado com sucesso!");
-        setFormData({
-          nome: "",
-          email: "",
-          empresa: "",
-          telefone: "",
-          vendas: "",
-          cargo: "",
-        });
+        // Redirecionar para a página de obrigado
+        router.push("/obrigado"); // 👈 REDIRECIONAMENTO
       } else {
         setMessage(data.message || "Erro ao enviar formulário");
       }
