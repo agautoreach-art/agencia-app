@@ -82,9 +82,7 @@ export function ContactForm() {
           </p>
           <p className="flex items-start gap-2">
             <CheckCircle2 className="w-5 h-5 focus:ring-[#002f6b] shrink-0 mt-0.5" />
-            <span>
-              um dos nossos especialistas entrará em contato para agendar a reunião mais importante com você.
-            </span>
+            um dos nossos especialistas entrará em contato para agendar a reunião mais importante com você.
           </p>
         </div>
       </div>
