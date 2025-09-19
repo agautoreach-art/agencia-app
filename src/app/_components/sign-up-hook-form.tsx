@@ -4,7 +4,7 @@ import { CheckCircle2 } from "lucide-react"
 
 export function ContactForm() {
   return (
-    <div className="container mx-auto px-4 max-w-5xl flex flex-col md:flex-row gap-8">
+    <div id="formulario" className="container mx-auto px-4 max-w-5xl flex flex-col md:flex-row gap-8 scroll-mt-24">
   {/* Coluna do texto */}
   <div className="md:w-1/2">
     <h2 className="text-2xl md:text-4xl font-bold text-[#002f6b] mb-4 py-10 text-center md:text-left">
@@ -39,7 +39,7 @@ export function ContactForm() {
       <input
         type="hidden"
         name="_next"
-        value="http://localhost:3000/obrigado"
+        value="http://agenciareach/obrigado"
       />
 
       {/* Seus campos aqui... */}
