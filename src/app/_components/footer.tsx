@@ -54,8 +54,7 @@ export function Footer() {
         </h2>
 
         <a
-            href="https://wa.me/5541996855407?text=Olá, vim através do site e gostaria de agendar uma reunião."
-            target="_blank"
+            href="#formulario"
             className="text-[#002f6b] border-[1px] border-[#002f6b] px-6 py-3 rounded-md text-sm font-medium flex items-center gap-4 hover:bg-[#002f6b] hover:text-white transition"
         >
             <span>Agende uma reunião</span>
