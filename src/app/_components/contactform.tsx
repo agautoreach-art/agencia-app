@@ -70,20 +70,20 @@ export function ContactForm() {
       {/* Coluna do texto */}
       <div className="md:w-1/2">
         <h2 className="text-2xl md:text-4xl font-bold text-[#002f6b] mb-4 py-10 text-center md:text-left">
-          Preencha o formulário para ter nossa assessoria de marketing feita sob medida para sua loja
+          Preencha o formulário e tenha uma agência de marketing feita sob medida para sua loja
         </h2>
 
         <div className="space-y-2 mb-8 text-gray-600 text-sm md:text-base text-center md:text-left">
           <p className="flex items-start gap-2">
-            <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+            <CheckCircle2 className="w-5 h-5 focus:ring-[#002f6b] shrink-0 mt-0.5" />
             <span>
-              Preencha o formulário. Envie suas informações de contato. Todos os seus dados estarão seguros conosco.
+              Todos os seus dados estarão seguros conosco.
             </span>
           </p>
           <p className="flex items-start gap-2">
-            <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+            <CheckCircle2 className="w-5 h-5 focus:ring-[#002f6b] shrink-0 mt-0.5" />
             <span>
-              Receba uma ligação em até 12 horas, um dos nossos especialistas entrará em contato para agendar a reunião mais importante com você.
+              um dos nossos especialistas entrará em contato para agendar a reunião mais importante com você.
             </span>
           </p>
         </div>
@@ -97,14 +97,14 @@ export function ContactForm() {
         >
           {/* Campos do formulário */}
           <div>
-            <label className="block text-sm font-medium mb-1">Seu nome completo</label>
+            <label className="block text-sm font-medium mb-1">Seu nome</label>
             <input
               type="text"
               name="nome"
               required
               value={formData.nome}
               onChange={handleChange}
-              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#002f6b]"
             />
           </div>
 
@@ -116,19 +116,19 @@ export function ContactForm() {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#002f6b]"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1">Qual o nome da sua empresa</label>
+            <label className="block text-sm font-medium mb-1">Qual o nome ou @ da sua loja</label>
             <input
               type="text"
               name="empresa"
               required
               value={formData.empresa}
               onChange={handleChange}
-              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#002f6b]"
             />
           </div>
 
@@ -140,7 +140,7 @@ export function ContactForm() {
               required
               value={formData.telefone}
               onChange={handleChange}
-              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#002f6b]"
             />
           </div>
 
@@ -151,7 +151,7 @@ export function ContactForm() {
               required
               value={formData.vendas}
               onChange={handleChange}
-              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#002f6b]"
             >
               <option value="">Selecione</option>
               <option value="Até 5 vendas">Até 5 vendas</option>
@@ -168,7 +168,7 @@ export function ContactForm() {
               required
               value={formData.cargo}
               onChange={handleChange}
-              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#002f6b]"
             >
               <option value="">Selecione</option>
               <option value="Proprietário(a)">Proprietário(a)</option>

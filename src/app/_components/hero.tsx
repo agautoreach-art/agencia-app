@@ -23,12 +23,12 @@ export function Hero() {
 
         {/* Título */}
         <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl text-white mb-6">
-          Aumente as vendas da sua <br /> loja de carros sem perder tempo com <br /> leads desqualificados e curiosos.
+          Aumente as vendas da <br />sua loja de carros <br /> sem perder tempo com <br /> leads desqualificados.
         </h1>
 
         {/* Subtítulo */}
         <p className="text-lg md:text-xl text-gray-300 mb-8">
-         Alcance clientes qualificados com estratégias de <span className="font-extra-bold"> tráfego pago </span> <br /> e aumente suas vendas sem perder tempo.
+         Alcance clientes compradores com estratégias de <br className="font-extra-bold" />tráfego pago e aumente suas vendas.<br />
         </p>
 
         {/* Botão de CTA */}
@@ -37,7 +37,7 @@ export function Hero() {
             href='#formulario'
             className="flex items-center gap-2 px-6 py-3 bg-green-500 text-white rounded-sm text-lg hover:bg-green-600 transition duration-300"
           >
-            QUERO SABER MAIS
+            Quero saber mais
           </a>
         </div>
 

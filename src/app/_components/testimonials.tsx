@@ -60,7 +60,7 @@ function scrollNext(){
             <div className="container mx-auto px-4">
 
             <h2 className="text-4xl text-white text-center font-bold mb-5">Mais de 100 cases de sucesso registrados</h2>
-          <p className="text-1xl text-gray-300 text-center mb-12">Projetos com resultados acima da média são transformados <br /> em cases de sucesso. Conheça alguns deles abaixo.
+          <p className="text-1xl text-gray-300 text-center mb-12">Projetos com resultados acima da média são transformados em cases de sucesso. Conheça alguns deles abaixo.
           </p>
  
         <div className="relative max-w-4xl mx-auto">
