@@ -40,19 +40,21 @@ export function ContactForm() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage("Formulário enviado com sucesso!");
-        setFormData({
-          nome: "",
-          email: "",
-          empresa: "",
-          telefone: "",
-          vendas: "",
-          cargo: "",
-        });
-        router.push("/obrigado"); // aqui o redirecionamento para a página de obrigado
-      } else {
-        setMessage(data.message || "Erro ao enviar formulário");
-      }
+  // Limpa formulário (opcional)
+  setFormData({
+    nome: "",
+    email: "",
+    empresa: "",
+    telefone: "",
+    vendas: "",
+    cargo: "",
+  });
+  
+  // Redireciona imediatamente
+  router.push("/obrigado");
+} else {
+  setMessage(data.message || "Erro ao enviar formulário");
+}
     } catch (error) {
       setMessage("Erro na conexão. Tente novamente.");
     }
