@@ -15,15 +15,15 @@ export async function POST(request: Request) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.GMAIL_USER,      // Seu email Gmail
-        pass: process.env.GMAIL_PASS,      // Sua senha de app (não a senha normal)
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     // Montar o conteúdo do email
     const mailOptions = {
-      from: process.env.GMAIL_USER,
-      to: process.env.GMAIL_USER,  // pode mudar para onde quer receber
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
       subject: `Novo lead - ${nome}`,
       text: `
         Nome: ${nome}
