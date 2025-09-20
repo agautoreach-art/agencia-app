@@ -41,12 +41,17 @@ export function ContactForm() {
       const data = await response.json();
 
       if (response.ok) {
-        // Dispara evento do GA4 para lead
+        // GA4 - Dispara evento de Lead
         generateLead({
-          value: 1.0,              // valor fictício ou baseado no seu funil
+          value: 1.0,
           currency: "BRL",
           lead_source: "LP AutoReach",
         });
+
+        // Meta Pixel - Dispara evento de Lead
+        if (typeof window !== "undefined" && (window as any).fbq) {
+          (window as any).fbq("track", "Lead");
+        }
 
         // Limpa o formulário
         setFormData({
