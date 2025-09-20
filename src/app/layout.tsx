@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import { Analytics } from "../app/_components/analytics"; // Importa o Analytics que criaremos
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -110,6 +111,9 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
+
+        {/* Componente para rastrear mudanças de rota */}
+        <Analytics />
 
         {children}
       </body>

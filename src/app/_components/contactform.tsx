@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation"; // atenção aqui - esse é o hook do Next 13 app router
+import { useRouter } from "next/navigation";
 import { CheckCircle2 } from "lucide-react";
+import { generateLead } from "@/lib/gtag";
 
 export function ContactForm() {
   const router = useRouter();
@@ -40,21 +41,28 @@ export function ContactForm() {
       const data = await response.json();
 
       if (response.ok) {
-  // Limpa formulário (opcional)
-  setFormData({
-    nome: "",
-    email: "",
-    empresa: "",
-    telefone: "",
-    vendas: "",
-    cargo: "",
-  });
-  
-  // Redireciona imediatamente
-  router.push("/obrigado");
-} else {
-  setMessage(data.message || "Erro ao enviar formulário");
-}
+        // Dispara evento do GA4 para lead
+        generateLead({
+          value: 1.0,              // valor fictício ou baseado no seu funil
+          currency: "BRL",
+          lead_source: "LP AutoReach",
+        });
+
+        // Limpa o formulário
+        setFormData({
+          nome: "",
+          email: "",
+          empresa: "",
+          telefone: "",
+          vendas: "",
+          cargo: "",
+        });
+
+        // Redireciona para página de obrigado
+        router.push("/obrigado");
+      } else {
+        setMessage(data.message || "Erro ao enviar formulário");
+      }
     } catch (error) {
       setMessage("Erro na conexão. Tente novamente.");
     }
@@ -76,9 +84,7 @@ export function ContactForm() {
         <div className="space-y-2 mb-8 text-gray-600 text-sm md:text-base text-center md:text-left">
           <p className="flex items-start gap-2">
             <CheckCircle2 className="w-5 h-5 focus:ring-[#002f6b] shrink-0 mt-0.5" />
-            <span>
-              Todos os seus dados estarão seguros conosco.
-            </span>
+            <span>Todos os seus dados estarão seguros conosco.</span>
           </p>
           <p className="flex items-start gap-2">
             <CheckCircle2 className="w-5 h-5 focus:ring-[#002f6b] shrink-0 mt-0.5" />
@@ -89,10 +95,7 @@ export function ContactForm() {
 
       {/* Coluna do formulário */}
       <div className="md:w-1/2 md:py-5">
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-4 bg-white p-6 rounded-md shadow-md border"
-        >
+        <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 rounded-md shadow-md border">
           {/* Campos do formulário */}
           <div>
             <label className="block text-sm font-medium mb-1">Seu nome</label>
@@ -184,7 +187,7 @@ export function ContactForm() {
             {loading ? "Enviando..." : "ENVIAR"}
           </button>
 
-          {message && <p className="mt-4">{message}</p>}
+          {message && <p className="mt-4 text-red-600">{message}</p>}
         </form>
       </div>
     </div>
