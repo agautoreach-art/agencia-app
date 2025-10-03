@@ -3,13 +3,11 @@ import { Footer } from "./_components/footer";
 import { Hero } from "./_components/hero";
 import { Services } from "./_components/services";
 import { Testimonials } from "./_components/testimonials";
-import { ContactForm } from './_components/contactform';
 
 export default function Home() {
   return(
     <main>
       <Hero/>
-      <ContactForm/>
       <Services/>
       <About/>
       <Testimonials/>

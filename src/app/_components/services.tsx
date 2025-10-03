@@ -14,7 +14,7 @@ const services = [
         icon: <Smartphone className="h-8 w-8 text-white" />,
     },
     {  
-        title: "Vídeo Maker",
+        title: "AudioVisual",
         description: "Dê vida à sua marca com vídeos profissionais que encantam e engajam seu público. Produzimos conteúdos audiovisuais, anúncios e apresentações, desde a criação do roteiro até a edição final. Autoridade e resultados reais para a sua loja.",
         icon: <Clapperboard className="h-8 w-8 text-white" />,
     },
@@ -35,9 +35,8 @@ export function Services() {
                     <span className="inline-block border border-[#1d396f] text-[#1d396f] px-8 py-2 rounded-full text-sm md:text-base font-semibold tracking-widest mb-6">
                         SERVIÇOS
                     </span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#1d396f] leading-snug">
-                        Criamos a estrutura completa <br />
-                        para sua loja <span className="text-green-500"> vender mais!</span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#10183f] leading-snug">
+                        Conheça nossa gama de <span className="text-green-400"> Soluções</span>
                     </h2>
                 </div>
                 {/* FIM DO TOPO */}
